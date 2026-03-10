@@ -70,12 +70,15 @@ MAX_PROMPT_SIZE=100000  # 100KB limit for safety
 PROMPT="You are searching a personal collection of GitHub starred repositories.
 The user is looking for: $QUERY
 
-Below are all the starred repos. Return the top 10 most relevant matches in a simple table format.
+Below are all the starred repos. Each repo includes a 'Starred:' field with the date it was starred (ISO 8601 format).
+
+Return the top 10 most relevant matches in a simple table format.
 
 Format each row like this:
-| repo-name | brief description | stars | key tags |
+| repo-name | brief description | stars | starred date | key tags |
 
 Keep descriptions under 10 words. Only show the table, no extra text.
+If the query mentions time (e.g., 'last week', 'recently', 'this month'), only include repos with matching starred dates.
 If nothing is relevant, say so.
 
 ---

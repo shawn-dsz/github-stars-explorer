@@ -40,8 +40,8 @@ trap "rm -rf $TEMP_DIR" EXIT
 
 # Pagination loop
 while true; do
-    # Fetch a page of starred repos
-    RESPONSE=$(gh api "/user/starred?per_page=100&sort=created&direction=desc&page=$PAGE" 2>/dev/null) || {
+    # Fetch a page of starred repos (with starred_at timestamp)
+    RESPONSE=$(gh api -H "Accept: application/vnd.github.star+json" "/user/starred?per_page=100&sort=created&direction=desc&page=$PAGE" 2>/dev/null) || {
         echo "Error: Failed to fetch from GitHub API. Make sure 'gh' is installed and authenticated."
         exit 1
     }
@@ -55,16 +55,17 @@ while true; do
     # Process each repo
     PAGE_NEW_COUNT=0
     for i in $(seq 0 $((REPO_COUNT - 1))); do
-        repo=$(echo "$RESPONSE" | jq -c ".[$i]")
+        item=$(echo "$RESPONSE" | jq -c ".[$i]")
 
-        # Extract fields
-        NAME=$(echo "$repo" | jq -r '.name')
-        OWNER=$(echo "$repo" | jq -r '.owner.login')
-        HTML_URL=$(echo "$repo" | jq -r '.html_url')
-        LANGUAGE=$(echo "$repo" | jq -r '.language // "N/A"')
-        STARGAZERS_COUNT=$(echo "$repo" | jq -r '.stargazers_count')
-        TOPICS=$(echo "$repo" | jq -r '.topics | join(", ")')
-        DESCRIPTION=$(echo "$repo" | jq -r '.description // ""')
+        # Extract fields (API returns repo under .repo with star+json header)
+        NAME=$(echo "$item" | jq -r '.repo.name')
+        OWNER=$(echo "$item" | jq -r '.repo.owner.login')
+        HTML_URL=$(echo "$item" | jq -r '.repo.html_url')
+        LANGUAGE=$(echo "$item" | jq -r '.repo.language // "N/A"')
+        STARGAZERS_COUNT=$(echo "$item" | jq -r '.repo.stargazers_count')
+        TOPICS=$(echo "$item" | jq -r '.repo.topics | join(", ")')
+        DESCRIPTION=$(echo "$item" | jq -r '.repo.description // ""')
+        STARRED_AT=$(echo "$item" | jq -r '.starred_at // ""' | cut -d'T' -f1)
 
         # Generate filename
         FILENAME="stars/${OWNER}-${NAME}.md"
@@ -84,6 +85,7 @@ while true; do
 **URL**: ${HTML_URL}
 **Language**: ${LANGUAGE}
 **Stars**: ${STARGAZERS_COUNT}
+**Starred**: ${STARRED_AT}
 **Topics**: ${TOPICS}
 
 ${DESCRIPTION}
