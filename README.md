@@ -1,6 +1,10 @@
 # GitHub Stars Explorer
 
 <p align="center">
+  <img src="logo.svg" width="120" height="120" alt="GitHub Stars Explorer Logo">
+</p>
+
+<p align="center">
   <b>Find the needle in your GitHub stars haystack</b>
 </p>
 
