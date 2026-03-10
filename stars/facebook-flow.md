@@ -4,6 +4,7 @@
 **URL**: https://github.com/facebook/flow
 **Language**: OCaml
 **Stars**: 22214
+**Starred**: 2016-09-05
 **Topics**: 
 
 Adds static typing to JavaScript to improve developer productivity and code quality.

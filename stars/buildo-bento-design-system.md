@@ -4,6 +4,7 @@
 **URL**: https://github.com/buildo/bento-design-system
 **Language**: TypeScript
 **Stars**: 137
+**Starred**: 2022-06-09
 **Topics**: design-system, figma, react, react-aria, typescript, vanilla-extract
 
 A customizable and extensible Design System framework for React.js projects

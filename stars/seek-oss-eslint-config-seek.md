@@ -4,6 +4,7 @@
 **URL**: https://github.com/seek-oss/eslint-config-seek
 **Language**: TypeScript
 **Stars**: 7
+**Starred**: 2017-07-11
 **Topics**: eslint, eslint-config, front-end
 
 Shareable ESLint configuration used by SEEK

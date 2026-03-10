@@ -3,7 +3,8 @@
 **Owner**: kamranahmedse
 **URL**: https://github.com/kamranahmedse/slim
 **Language**: Go
-**Stars**: 536
+**Stars**: 539
+**Starred**: 2026-03-09
 **Topics**: 
 
 Give your localhost a local or public URL

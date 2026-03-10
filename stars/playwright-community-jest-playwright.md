@@ -4,6 +4,7 @@
 **URL**: https://github.com/playwright-community/jest-playwright
 **Language**: TypeScript
 **Stars**: 543
+**Starred**: 2021-03-30
 **Topics**: jest-environment, jest-playwright, playwright, testing, typescript
 
 Running tests using Jest & Playwright 

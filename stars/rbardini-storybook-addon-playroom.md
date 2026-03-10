@@ -4,6 +4,7 @@
 **URL**: https://github.com/rbardini/storybook-addon-playroom
 **Language**: TypeScript
 **Stars**: 215
+**Starred**: 2022-04-19
 **Topics**: design, jsx, playroom, react, storybook-addon
 
 🧩 Design with Playroom inside Storybook, using each story source as a starting point

@@ -4,6 +4,7 @@
 **URL**: https://github.com/pact-foundation/pact-specification
 **Language**: N/A
 **Stars**: 310
+**Starred**: 2016-04-17
 **Topics**: contract-testing, pact, smartbear-supported, specification
 
 Describes the pact format and verification specifications

@@ -4,6 +4,7 @@
 **URL**: https://github.com/jahredhope/basic-webpack-example
 **Language**: TypeScript
 **Stars**: 1
+**Starred**: 2019-09-16
 **Topics**: proof-of-concept
 
 A project for testing web application patterns starting from a basic web application

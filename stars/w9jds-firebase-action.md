@@ -4,6 +4,7 @@
 **URL**: https://github.com/w9jds/firebase-action
 **Language**: Shell
 **Stars**: 950
+**Starred**: 2020-07-19
 **Topics**: firebase, firebase-tools, github-actions
 
 GitHub Action for interacting with Firebase

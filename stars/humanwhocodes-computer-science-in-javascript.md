@@ -4,6 +4,7 @@
 **URL**: https://github.com/humanwhocodes/computer-science-in-javascript
 **Language**: JavaScript
 **Stars**: 9126
+**Starred**: 2022-07-30
 **Topics**: 
 
 Collection of classic computer science paradigms, algorithms, and approaches written in JavaScript. 

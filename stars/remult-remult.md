@@ -4,6 +4,7 @@
 **URL**: https://github.com/remult/remult
 **Language**: TypeScript
 **Stars**: 3204
+**Starred**: 2023-09-01
 **Topics**: angular, api, crud, express-middleware, fullstack, fullstack-typescript, jamstack, nextjs, orm, postgresql, react, rest, typescript, validation, vue
 
 Full-stack CRUD, simplified, with SSOT TypeScript entities

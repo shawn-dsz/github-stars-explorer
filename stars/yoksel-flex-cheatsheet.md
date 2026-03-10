@@ -4,6 +4,7 @@
 **URL**: https://github.com/yoksel/flex-cheatsheet
 **Language**: JavaScript
 **Stars**: 1356
+**Starred**: 2019-02-20
 **Topics**: css, css-layout, flex-layout, flexbox, flexbox-cheatsheet, flexbox-css
 
 📖 Flexbox cheatsheet 

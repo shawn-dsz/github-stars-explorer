@@ -4,6 +4,7 @@
 **URL**: https://github.com/seek-oss/css-modules-typescript-loader
 **Language**: JavaScript
 **Stars**: 197
+**Starred**: 2018-10-18
 **Topics**: css-modules, front-end, typescript, webpack, webpack-loader
 
 Webpack loader to create TypeScript declarations for CSS Modules

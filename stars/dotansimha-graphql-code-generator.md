@@ -4,6 +4,7 @@
 **URL**: https://github.com/dotansimha/graphql-code-generator
 **Language**: TypeScript
 **Stars**: 11222
+**Starred**: 2021-04-13
 **Topics**: android, angular, code-generator, codegen, csharp, graphql, graphql-schema, java, react, resolvers, schema, the-guild, typescript
 
 A tool for generating code based on a GraphQL schema and GraphQL operations (query/mutation/subscription), with flexible support for custom plugins. 

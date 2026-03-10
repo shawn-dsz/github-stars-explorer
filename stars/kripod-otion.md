@@ -4,6 +4,7 @@
 **URL**: https://github.com/kripod/otion
 **Language**: TypeScript
 **Stars**: 629
+**Starred**: 2020-05-18
 **Topics**: atomic-css, css-in-js, microlibrary, styling, typescript
 
 Atomic CSS-in-JS with a featherweight runtime

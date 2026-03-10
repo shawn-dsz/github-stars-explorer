@@ -4,6 +4,7 @@
 **URL**: https://github.com/hanford/next-offline
 **Language**: JavaScript
 **Stars**: 1602
+**Starred**: 2022-04-15
 **Topics**: cache, nextjs, offline, pwa, service-worker, website, workbox
 
 make your Next.js application work offline using service workers via Google's workbox

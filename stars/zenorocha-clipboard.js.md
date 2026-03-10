@@ -4,6 +4,7 @@
 **URL**: https://github.com/zenorocha/clipboard.js
 **Language**: JavaScript
 **Stars**: 34177
+**Starred**: 2022-03-23
 **Topics**: clipboard, javascript
 
 :scissors: Modern copy to clipboard. No Flash. Just 3kb gzipped :clipboard:

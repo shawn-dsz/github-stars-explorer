@@ -4,6 +4,7 @@
 **URL**: https://github.com/storybook-eol/react-cdk
 **Language**: JavaScript
 **Stars**: 573
+**Starred**: 2016-08-01
 **Topics**: boilerplate, cdk, developer-tools, development, generator, react, stories, storybook
 
 under development - React Component Development Kit with Storybook

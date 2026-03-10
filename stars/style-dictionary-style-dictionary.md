@@ -4,6 +4,7 @@
 **URL**: https://github.com/style-dictionary/style-dictionary
 **Language**: JavaScript
 **Stars**: 4543
+**Starred**: 2025-10-21
 **Topics**: build-system, build-tool, cross-platform, design-systems, design-tokens, design-tools, style, style-tokens, styleguide
 
 A build system for creating cross-platform styles.

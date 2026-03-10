@@ -4,6 +4,7 @@
 **URL**: https://github.com/seek-oss/koala
 **Language**: TypeScript
 **Stars**: 4
+**Starred**: 2020-06-12
 **Topics**: koa, owner-sig-backend-tooling
 
 🐨 Koa add-ons for SEEK-standard tracing, logging and metrics

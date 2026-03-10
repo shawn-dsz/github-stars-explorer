@@ -4,6 +4,7 @@
 **URL**: https://github.com/nosir/cleave.js
 **Language**: JavaScript
 **Stars**: 17921
+**Starred**: 2016-07-20
 **Topics**: credit-card, creditcard, input, input-mask, telephone-number
 
 Format input text content when you are typing...

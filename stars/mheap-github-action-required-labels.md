@@ -4,6 +4,7 @@
 **URL**: https://github.com/mheap/github-action-required-labels
 **Language**: JavaScript
 **Stars**: 111
+**Starred**: 2023-01-25
 **Topics**: github-action
 
 Fail the build if/unless a certain combination of labels are applied to a pull request

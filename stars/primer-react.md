@@ -4,6 +4,7 @@
 **URL**: https://github.com/primer/react
 **Language**: TypeScript
 **Stars**: 3816
+**Starred**: 2019-10-27
 **Topics**: component-library, design-system, primer, react
 
 An implementation of GitHub's Primer Design System using React

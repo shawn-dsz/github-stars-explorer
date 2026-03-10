@@ -4,6 +4,7 @@
 **URL**: https://github.com/shuding/nextra
 **Language**: TypeScript
 **Stars**: 13663
+**Starred**: 2022-04-19
 **Topics**: markdown, mdx, nextjs, nextra, react, static-site-generator
 
 Simple, powerful and flexible site generation framework with everything you love from Next.js.

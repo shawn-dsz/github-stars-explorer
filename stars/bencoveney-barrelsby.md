@@ -4,6 +4,7 @@
 **URL**: https://github.com/bencoveney/barrelsby
 **Language**: TypeScript
 **Stars**: 604
+**Starred**: 2023-01-20
 **Topics**: barrel, cli, index, node, npm, typescript
 
 Automatic TypeScript barrels (index.ts files) for your entire code base

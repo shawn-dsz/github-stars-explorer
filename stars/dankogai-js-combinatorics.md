@@ -4,6 +4,7 @@
 **URL**: https://github.com/dankogai/js-combinatorics
 **Language**: JavaScript
 **Stars**: 750
+**Starred**: 2017-06-26
 **Topics**: 
 
 power set, combination, permutation and more in JavaScript

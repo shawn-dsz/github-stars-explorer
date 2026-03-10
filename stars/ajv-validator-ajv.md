@@ -4,6 +4,7 @@
 **URL**: https://github.com/ajv-validator/ajv
 **Language**: TypeScript
 **Stars**: 14637
+**Starred**: 2016-08-09
 **Topics**: ajv, json-schema, validator
 
 The fastest JSON schema Validator. Supports JSON Schema draft-04/06/07/2019-09/2020-12 and JSON Type Definition (RFC8927)

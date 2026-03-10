@@ -4,6 +4,7 @@
 **URL**: https://github.com/dsibiski/react-native-hybrid-app-examples
 **Language**: Objective-C
 **Stars**: 228
+**Starred**: 2023-05-16
 **Topics**: 
 
 A collection of examples for using React Native in an existing iOS application

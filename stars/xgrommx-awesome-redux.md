@@ -4,6 +4,7 @@
 **URL**: https://github.com/xgrommx/awesome-redux
 **Language**: N/A
 **Stars**: 12280
+**Starred**: 2016-05-09
 **Topics**: awesome, awesome-list, redux, redux-documentation
 
 Awesome list of Redux examples and middlewares

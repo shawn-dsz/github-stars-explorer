@@ -4,6 +4,7 @@
 **URL**: https://github.com/vercel/examples
 **Language**: TypeScript
 **Stars**: 4982
+**Starred**: 2023-05-06
 **Topics**: examples, nextjs, vercel
 
 Enjoy our curated collection of examples and solutions. Use these patterns to build your own robust and scalable applications.

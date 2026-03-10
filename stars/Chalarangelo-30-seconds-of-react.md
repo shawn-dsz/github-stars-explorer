@@ -4,6 +4,7 @@
 **URL**: https://github.com/Chalarangelo/30-seconds-of-react
 **Language**: JavaScript
 **Stars**: 5091
+**Starred**: 2022-08-08
 **Topics**: education, javascript, learn-to-code, learning-resources, programming, react, reactjs, snippets, snippets-collection, snippets-library
 
 Short React code snippets for all your development needs

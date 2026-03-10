@@ -4,6 +4,7 @@
 **URL**: https://github.com/bvaughn/react-window-infinite-loader
 **Language**: TypeScript
 **Stars**: 952
+**Starred**: 2022-01-23
 **Topics**: 
 
 InfiniteLoader component inspired by react-virtualized but for use with react-window

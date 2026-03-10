@@ -4,6 +4,7 @@
 **URL**: https://github.com/benawad/graphql-ts-server-boilerplate
 **Language**: TypeScript
 **Stars**: 701
+**Starred**: 2018-12-11
 **Topics**: graphql, postgresql, redis, typescript
 
 A GraphQL server boilerplate made with Typescript, PostgreSQL, and Redis

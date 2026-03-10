@@ -3,7 +3,8 @@
 **Owner**: ClickHouse
 **URL**: https://github.com/ClickHouse/ClickHouse
 **Language**: C++
-**Stars**: 46261
+**Stars**: 46263
+**Starred**: 2022-03-23
 **Topics**: ai, analytics, big-data, clickhouse, cloud-native, cpp, database, dbms, distributed, embedded, hacktoberfest, lakehouse, mpp, olap, rust, self-hosted, sql
 
 ClickHouse® is a real-time analytics database management system
