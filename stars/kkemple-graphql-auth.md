@@ -1,0 +1,9 @@
+# graphql-auth
+
+**Owner**: kkemple
+**URL**: https://github.com/kkemple/graphql-auth
+**Language**: TypeScript
+**Stars**: 277
+**Topics**: 
+
+🔒 GraphQL authentication and authorization middleware

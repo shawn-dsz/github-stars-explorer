@@ -1,0 +1,9 @@
+# mkdocs-material
+
+**Owner**: squidfunk
+**URL**: https://github.com/squidfunk/mkdocs-material
+**Language**: Python
+**Stars**: 26220
+**Topics**: documentation, framework, material-design, mkdocs, plugins, theme
+
+Documentation that simply works
