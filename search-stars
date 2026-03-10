@@ -1,0 +1,70 @@
+#!/bin/bash
+#
+# search-stars - Search your GitHub starred repos using an LLM
+#
+# Usage:
+#   ./search-stars "find me a tool for planning AI agent work"
+#   ./search-stars --model codex "CSS animation library"
+#   ./search-stars --model kimi "Rust CLI tools"
+#
+# Default model: claude
+
+MODEL="claude"
+QUERY=""
+
+for arg in "$@"; do
+    case $arg in
+        --model)
+            shift
+            MODEL="$1"
+            shift
+            ;;
+        *)
+            QUERY="$QUERY $arg"
+            ;;
+    esac
+done
+
+QUERY=$(echo "$QUERY" | xargs)  # trim whitespace
+
+if [ -z "$QUERY" ]; then
+    echo "Usage: $0 [--model claude|codex|kimi|gemini] \"your query\""
+    exit 1
+fi
+
+STARS_DIR="$(dirname "$0")/stars"
+
+if [ ! -d "$STARS_DIR" ] || [ -z "$(ls "$STARS_DIR"/*.md 2>/dev/null)" ]; then
+    echo "No stars found. Run ./fetch-stars.sh first."
+    exit 1
+fi
+
+PROMPT="You are searching a personal collection of GitHub starred repositories.
+The user is looking for: $QUERY
+
+Below are all the starred repos. Return the top 2-3 most relevant matches.
+For each match include: repo name, URL, and one sentence on why it matches.
+If nothing is relevant, say so.
+
+---
+
+$(cat "$STARS_DIR"/*.md)"
+
+case $MODEL in
+    claude)
+        echo "$PROMPT" | claude
+        ;;
+    codex)
+        echo "$PROMPT" | codex -p
+        ;;
+    kimi)
+        echo "$PROMPT" | kimi -p
+        ;;
+    gemini)
+        echo "$PROMPT" | gemini
+        ;;
+    *)
+        echo "Unknown model: $MODEL. Use claude, codex, kimi, or gemini."
+        exit 1
+        ;;
+esac

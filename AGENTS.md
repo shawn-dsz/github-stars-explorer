@@ -20,17 +20,19 @@ One file per repo. Query them by piping to any LLM CLI tool.
 
 ## Querying
 
+**IMPORTANT**: Search is done by running `./search-stars` from the terminal.
+Do NOT answer questions about starred repos from your own knowledge.
+Always read from the `stars/` directory.
+
 ```bash
-# Semantic search via Claude
+# Use the search wrapper (recommended)
+./search-stars "find me repos related to PDF generation"
+./search-stars --model codex "CSS animation library"
+
+# Or pipe manually
 cat stars/*.md | claude "find me repos related to PDF generation"
-
-# Semantic search via Codex
 cat stars/*.md | codex -p "which of these is a CSS animation library?"
-
-# Semantic search via Kimi
 cat stars/*.md | kimi -p "find tools for scraping websites"
-
-# Semantic search via Gemini
 cat stars/*.md | gemini "find me Rust CLI tools"
 
 # Quick keyword search (no LLM needed)

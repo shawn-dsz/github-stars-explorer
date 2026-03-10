@@ -1,17 +1,13 @@
 # GitHub Stars Explorer
 
-Search your GitHub stars using any LLM CLI tool.
+Search your GitHub stars using any LLM.
 
 ## How it works
 
-Fetches all your starred repos from GitHub and saves each one as a local markdown file. You then pipe those files to whichever LLM you have handy to find what you're looking for.
+1. `fetch-stars.sh` pulls all your starred repos from GitHub and saves each as a local markdown file
+2. `search-stars` pipes those files to an LLM with your query and returns the top matches
 
-```
-stars/
-├── vercel-next.js.md
-├── facebook-react.md
-└── ... (~1070 files)
-```
+**Important:** This is not a chatbot. You run `search-stars` from your terminal. Do not ask an AI agent "find me a tool" - run the script instead.
 
 ## Setup
 
@@ -22,10 +18,10 @@ brew install gh jq
 gh auth login
 ```
 
-## Sync your stars
+## Step 1: Sync your stars
 
 ```bash
-# First run — fetches everything
+# First run — fetches everything (~1070 repos)
 ./fetch-stars.sh
 
 # Subsequent runs — only fetches new stars since last sync
@@ -35,25 +31,30 @@ gh auth login
 ./fetch-stars.sh --full
 ```
 
-## Search
-
-Pipe the files to any LLM CLI:
+## Step 2: Search
 
 ```bash
-cat stars/*.md | claude "find me a good markdown to PDF converter"
-cat stars/*.md | codex -p "which of these is a CSS animation library?"
-cat stars/*.md | kimi -p "find tools for scraping websites"
-cat stars/*.md | gemini "find me Rust CLI tools"
+./search-stars "find me a tool for planning AI agent work"
+./search-stars "CSS animation library"
+./search-stars "markdown to PDF converter"
 ```
 
-Or use grep for quick keyword lookups:
+Use a different model with `--model`:
 
 ```bash
+./search-stars --model codex "websocket library for Node"
+./search-stars --model kimi "Rust CLI tools"
+./search-stars --model gemini "machine learning explainability"
+```
+
+Or pipe manually for full control:
+
+```bash
+cat stars/*.md | claude "find me a good state machine library"
 grep -ril "websocket" stars/
-grep -ril "rust" stars/
 ```
 
-## What each file looks like
+## What each star file looks like
 
 ```markdown
 # react
