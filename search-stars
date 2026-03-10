@@ -9,58 +9,116 @@
 #
 # Default model: claude
 
+set -euo pipefail
+
 MODEL="claude"
 QUERY=""
 
-for arg in "$@"; do
-    case $arg in
+# Parse arguments
+while [[ $# -gt 0 ]]; do
+    case $1 in
         --model)
-            shift
-            MODEL="$1"
+            if [[ -z "${2:-}" ]]; then
+                echo "Error: --model requires a value (claude|codex|kimi|gemini)"
+                exit 1
+            fi
+            MODEL="$2"
+            shift 2
+            ;;
+        -p|--prompt)
+            # Skip -p flag if user included it (for models that need it)
             shift
             ;;
         *)
-            QUERY="$QUERY $arg"
+            QUERY="$QUERY $1"
+            shift
             ;;
     esac
 done
 
 QUERY=$(echo "$QUERY" | xargs)  # trim whitespace
 
-if [ -z "$QUERY" ]; then
+if [[ -z "$QUERY" ]]; then
     echo "Usage: $0 [--model claude|codex|kimi|gemini] \"your query\""
     exit 1
 fi
 
 STARS_DIR="$(dirname "$0")/stars"
 
-if [ ! -d "$STARS_DIR" ] || [ -z "$(ls "$STARS_DIR"/*.md 2>/dev/null)" ]; then
+if [[ ! -d "$STARS_DIR" ]]; then
     echo "No stars found. Run ./fetch-stars.sh first."
     exit 1
 fi
 
+# Collect repo content safely
+REPO_CONTENT=""
+for f in "$STARS_DIR"/*.md; do
+    if [[ -f "$f" ]]; then
+        REPO_CONTENT+="$(cat "$f")"
+        REPO_CONTENT+=$'\n\n'
+    fi
+done
+
+if [[ -z "$REPO_CONTENT" ]]; then
+    echo "No stars found. Run ./fetch-stars.sh first."
+    exit 1
+fi
+
+# Safety check: limit prompt size to avoid argument list too long errors
+# Most systems have a 128KB - 2MB limit on argument length
+MAX_PROMPT_SIZE=100000  # 100KB limit for safety
 PROMPT="You are searching a personal collection of GitHub starred repositories.
 The user is looking for: $QUERY
 
-Below are all the starred repos. Return the top 2-3 most relevant matches.
-For each match include: repo name, URL, and one sentence on why it matches.
+Below are all the starred repos. Return the top 10 most relevant matches in a simple table format.
+
+Format each row like this:
+| repo-name | brief description | stars | key tags |
+
+Keep descriptions under 10 words. Only show the table, no extra text.
 If nothing is relevant, say so.
 
 ---
 
-$(cat "$STARS_DIR"/*.md)"
+$REPO_CONTENT"
 
+if [[ ${#PROMPT} -gt $MAX_PROMPT_SIZE ]]; then
+    echo "Warning: Prompt too large (${#PROMPT} chars). Trimming to ${MAX_PROMPT_SIZE} chars."
+    PROMPT="${PROMPT:0:$MAX_PROMPT_SIZE}"
+fi
+
+# Check if the model command exists and run with appropriate method
 case $MODEL in
     claude)
+        if ! command -v claude &>/dev/null; then
+            echo "Error: 'claude' command not found. Install Claude Code first."
+            exit 1
+        fi
+        # Claude reads from stdin
         echo "$PROMPT" | claude
         ;;
     codex)
+        if ! command -v codex &>/dev/null; then
+            echo "Error: 'codex' command not found. Install OpenAI Codex first."
+            exit 1
+        fi
+        # Codex: -p reads from stdin
         echo "$PROMPT" | codex -p
         ;;
     kimi)
-        echo "$PROMPT" | kimi -p
+        if ! command -v kimi &>/dev/null; then
+            echo "Error: 'kimi' command not found. Install Kimi CLI first."
+            exit 1
+        fi
+        # Kimi: -p takes the prompt as an argument (not stdin)
+        kimi --print --yolo -p "$PROMPT"
         ;;
     gemini)
+        if ! command -v gemini &>/dev/null; then
+            echo "Error: 'gemini' command not found. Install Gemini CLI first."
+            exit 1
+        fi
+        # Gemini reads from stdin
         echo "$PROMPT" | gemini
         ;;
     *)
